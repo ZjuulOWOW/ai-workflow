@@ -1,0 +1,7 @@
+name: 'AI Code Review'
+description: 'AI Code Review'
+runs:
+  env:
+    GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  using: 'node20'
+  main: '../../../apps/ai-code-review/index.js'

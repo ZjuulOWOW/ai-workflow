@@ -1,0 +1,24 @@
+name: Code Validation
+on:
+  pull_request: {}
+permissions:
+  contents: read
+  pull-requests: write
+  issues: write
+jobs:
+  Ai-review:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: ./.github/workflows/pnpm-install
+    - uses: ./.github/workflows/ai-code-review
+
+  # AI-Review:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #     - uses: freeedcom/ai-codereviewer@v2.7.0
+  #       with:
+  #         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  #         OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+  #         exclude: "**/*.json, **/*.md"
