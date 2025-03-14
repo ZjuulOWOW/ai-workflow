@@ -4,4 +4,4 @@ runs:
   env:
     GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   using: 'node20'
-  main: '../../../apps/ai-code-review/index.js'
+  main: '../../../ai-code-review/index.js'

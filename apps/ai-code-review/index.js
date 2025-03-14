@@ -2,6 +2,7 @@ import core from '@actions/core';
 import github from '@actions/github';
 
 try {
+    console.log('test')
     await fetch(github.context.payload.pull_request.diff_url, {
         method: 'GET',
         headers: {
